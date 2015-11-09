@@ -1,0 +1,19 @@
+{
+  "name": "promocity",
+  "description": "company promocity site",
+  "main": "gulpfile.js",
+  "authors": [
+    "Artem Vasilyev"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

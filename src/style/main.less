@@ -1,0 +1,618 @@
+/*
+* site name
+*/
+// @import "../../bower_components/normalize.css/normalize.css";
+
+/*
+* Custom
+*/
+@import "normalize.less";
+@import "partials/app";
+@import "classes.less";
+@import "var.less";
+
+/* Layout
+----------------------------------------------------------------------------------------- */
+html {
+  .box-sizing;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+*,
+*:before,
+*:after {
+  borx-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-width: 1371px;
+  background: rgba(228,228,228,1);
+background: -moz-linear-gradient(left, rgba(228,228,228,1) 0%, rgba(228,228,228,1) 22%, rgba(254,255,255,1) 50%, rgba(228,228,228,1) 83%, rgba(228,228,228,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(228,228,228,1)), color-stop(22%, rgba(228,228,228,1)), color-stop(50%, rgba(254,255,255,1)), color-stop(83%, rgba(228,228,228,1)), color-stop(100%, rgba(228,228,228,1)));
+background: -webkit-linear-gradient(left, rgba(228,228,228,1) 0%, rgba(228,228,228,1) 22%, rgba(254,255,255,1) 50%, rgba(228,228,228,1) 83%, rgba(228,228,228,1) 100%);
+background: -o-linear-gradient(left, rgba(228,228,228,1) 0%, rgba(228,228,228,1) 22%, rgba(254,255,255,1) 50%, rgba(228,228,228,1) 83%, rgba(228,228,228,1) 100%);
+background: -ms-linear-gradient(left, rgba(228,228,228,1) 0%, rgba(228,228,228,1) 22%, rgba(254,255,255,1) 50%, rgba(228,228,228,1) 83%, rgba(228,228,228,1) 100%);
+background: linear-gradient(to right, rgba(228,228,228,1) 0%, rgba(228,228,228,1) 22%, rgba(254,255,255,1) 50%, rgba(228,228,228,1) 83%, rgba(228,228,228,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4e4e4', endColorstr='#e4e4e4', GradientType=1 );
+}
+
+.body-wr {
+  background: url(../img/header/header-shadow-left.png) no-repeat 0 0,
+  url(../img/header/header-shadow-right.png) no-repeat 100% 0,
+  url(../img/footer/footer-shadow-left.png) no-repeat 0 100%, 
+  url(../img/footer/footer-shadow-right.png) no-repeat 100% 100%;
+}
+
+.content-wr {
+  max-width: 1314px;
+  margin: 0 auto;
+}
+
+.clearfix::after{
+  content:"";
+  display:table;
+  clear:both;
+}
+
+ul {
+  list-style-type: none;
+}
+/* Header
+----------------------------------------------------------------------------------- */
+.header-wr {
+  position: absolute;
+  background: #fff;
+  z-index: 1;
+  margin: 0 auto;
+  width: 100%;
+  height: 90px;
+  margin-top: 25px;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 0px;
+
+}
+
+.header-logo {
+  display: block;
+  width: 272px;
+  height: 89px;
+  overflow: hidden;
+  background: url(../img/header/logo.png) no-repeat 0 0px;
+}
+
+.main-nav {
+    flex-grow: 1;
+    padding: 0 70px;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 90px;
+  text-transform: uppercase;
+  font: 21px "Helvetica Neue", Tahoma, Helvetica, Arial, sans-serif;
+}
+
+.main-nav ul li {
+  margin: auto;
+}
+
+.main-nav ul li a {
+  color: #006baf;
+}
+
+.main-nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.header-contacts {
+  padding-top: 15px;
+}
+
+.tel {
+  display: block;
+  width: 195px;
+  height: 30px;
+  font: 18px  "Helvetica Neue", Tahoma, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  padding-left: 38px;
+  padding-top: 2px;
+  background: url(../img/header/tel.png) no-repeat 0 0;
+  color: #000;
+}
+
+.tel span {
+  color: #009f00;
+}
+
+.tel:hover {
+  text-decoration: underline;
+}
+
+/* Main content
+----------------------------------------------------------------------------------- */
+.content {
+  padding-top: 120px;
+}
+.website-dev {
+  position: relative;
+  z-index: 10;
+  background: url(../img/main-content/create-site-bg.png) no-repeat 50% 120px;
+  height: 610px;
+}
+
+.create-site-logo {
+  float: left;
+  width: 663px;
+  height: 280px;
+  background: url(../img/main-content/loupe.png) no-repeat 35px 30px;
+}
+
+.create-site-logo p {
+  color: #fff;
+  font: 41px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+  padding: 125px 0 0 276px;
+}
+
+.create-site-monitor {
+  float: right;
+  width: 630px;
+  height: 382px;
+  background: url(../img/main-content/monitor.png) no-repeat 135px 70px;
+}
+
+.website-dev-text {
+  color: #191919;
+  font: 24px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+  padding-left: 50px;
+}
+
+.site-order {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  margin-top: -37px;
+  padding: 0 5px;
+}
+
+.site-order li {
+  background-color: #000;
+  width: 240px;
+  height: 200px;
+  text-align: center;
+  border-left: 1px solid #a2a2a2;
+  border-right: 1px solid #a2a2a2;
+}
+
+.site-order li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.site-order li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.services-name {
+  font: 22px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  padding-top: 50px;
+}
+
+.double-line {
+  padding-top: 42px;
+  padding-bottom: 3px;
+}
+
+.price {
+  color: #63c1fe;
+  font: 22px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+  padding: 10px 0;
+  border-top: #e4e4e4 solid 1px;
+  border-bottom: #e4e4e4 solid 1px;
+}
+
+.more {
+  color: rgba(255, 255, 255, 0.75);
+  font: 22px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+  text-transform: lowercase;
+  padding-top: 10px;
+}
+
+.site-calc-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 35px;
+  border: 1px solid #000;
+  height: 965px;
+}
+
+.block-1 {
+  position: relative;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  width: 585px;
+  background: url(../img/main-content/block-1.png) no-repeat -50px 0;
+}
+
+.block-1-name {
+  width: 170px;
+  padding: 25px 0 0 195px;
+  font: 19px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.75);
+}
+
+.block-1-img-wr {
+  position: absolute;
+  display: none;
+}
+
+.starter-img-wr {
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 8px;
+  z-index: 2;
+}
+
+.uniq-img-wr {
+  position: absolute;
+  margin-top: -33px;
+  margin-left: 10px;
+  z-index: 0;
+  display: none;
+}
+
+.callback-img {
+  margin: 230px 0 0 443px;
+}
+
+.call-request-img {
+  margin: 670px 0 0 443px; 
+}
+
+.search-img {
+  margin: 34px 0 0 360px; 
+}
+
+.gallery-img {
+  margin: 234px 0 0 125px;  
+}
+
+.online-advise-img {
+   margin: 360px 0 0 438px; 
+}
+
+.catalog-img {
+  margin: 356px 0 0 125px; 
+}
+
+.basket-img {
+  margin: 452px 0 0 435px;   
+}
+
+.social-img {
+  margin: 233px 0 0 18px; 
+}
+
+.slider-img {
+  margin: 452px 0 0 18px;  
+}
+
+.news-img {
+  margin: 154px 0 0 124px;
+}
+
+.banner-img {
+  margin: 450px 0 0 123px;  
+}
+
+.audio-img {
+  margin: 578px 0 0 285px;
+}
+
+.video-img {
+ margin: 577px 0 0 121px; 
+}
+
+.cabinet-img {
+  margin: 356px 0 0 18px;  
+}
+
+.blog-img {
+  margin: 579px 0 0 18px;  
+}
+
+.forum-img {
+ margin: 681px 0 0 120px;
+}
+
+.robo-img {
+ margin: 576px 0 0 442px; 
+}
+
+.block-2 {
+  width: 620px;
+  background: url(../img/main-content/block-2.png) no-repeat -50px 0;
+}
+
+.block-2-name {
+  padding: 30px 0 0 200px;
+  font: 24px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.75);
+}
+
+.calc-form {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.calc-item {
+  text-align: left;
+}
+
+.type-site {
+  width: 560px;
+  height: 54px;
+  font: 22px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  padding-left: 145px;
+  background: #e4e4e4;
+  border: 0;
+  box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.75), inset -1px -1px 2px 0px rgba(255,255,255,1);
+}
+
+.select-options-wr {
+  width: 560px;
+  padding: 7px 0 10px 0;
+  margin: 8px 0 0 29px;
+  box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.75), inset -1px -1px 2px 0px rgba(255,255,255,1);
+  background: #e4e4e4;
+}
+
+.add {
+  font: 22px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+  color: #000;
+  padding-bottom: 5px;
+}
+
+.calc-item-wr {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  width: 81%;
+  border-bottom: #c1c1c1 2px solid;
+  margin-left: 55px;
+}
+
+.calc-item input {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  margin-left: 25px;
+  margin-right: 35px;
+  margin-top: 8px;
+}
+
+.calc-item-bold input {
+  margin-top: 0px;
+}
+
+.calc-item input[type=checkbox] {
+  display: none;
+}
+
+.calc-item input[type=checkbox] + label {
+  cursor: pointer;
+}
+
+.calc-item label:before {
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 40px;  
+  width: 30px;
+  height: 30px;
+  background: url(../img/main-content/block-2/checkbox-uncheck.png) no-repeat 50% 50%;
+}
+
+.aside-checkbox input[type=checkbox]:checked + label {
+  color: #d5251c;
+}
+
+.calc-item input[type=checkbox]:checked + label:before {
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 40px;
+  width: 30px;
+  height: 30px;
+  background: url(../img/main-content/block-2/checkbox-check.png) no-repeat 6px -6px;
+}
+
+.calc-item-bold p {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.calc-item-name {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  font: 15px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+  color: #000;
+  padding-top: 6px;
+}
+
+.calc-price {
+  float: right;
+  font: 15px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;  
+  color: #42ade5;
+  padding-top: 6px;
+}
+
+.calc-section {
+  margin: 17px 0 0 92px;
+}
+
+.calc-caption {
+  font: 14px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+  color: #1b1b1b;
+  text-align: left;
+  padding-left: 138px;
+  padding-top: 2px;
+}
+
+.barrel {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  width: 200px;
+  height: 62px;
+  border: 3px solid #18f81d;
+  margin-left: 0px;
+  margin-top: 3px;
+  background: #fff;
+}
+
+.barrel-number {
+  font: 30px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+  padding-top: 15px;
+  letter-spacing: 5px;
+}
+
+.site-order-btn {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  width: 193px;
+  height: 70px;
+  color: #fff;
+  font: 20px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+  text-transform: uppercase;
+  padding: 13px 0px 0px 0px;
+  background: url(../img/main-content/block-2-btn.png) no-repeat 0 0;
+  text-align: left;
+}
+
+/* Footer
+---------------------------------------------------------------------------------------- */
+.footer {
+  background: #444544;
+  color: rgba(255,255,255,.7);
+  padding-top: 25px;
+  font: 24px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+  padding-bottom: 25px;
+}
+
+.footer a {
+  color: rgba(255,255,255,.7);  
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.site-map {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.footer-ul-wr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.footer-ul-wr li {
+  padding: 2px 0;
+  font: 21px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+}
+
+.footer-bottom-wr {
+  position: absolute;
+  height: 105px;
+  background: #fff;
+  z-index: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 20px;
+}
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #fff;
+  color: #000;
+  height: 105px;
+}
+
+.footer-logo {
+  width: 280px;
+  background: url(../img/header/logo.png) no-repeat 0 50%;
+  margin-left: 40px;
+}
+
+.footer-social-text {
+  font: 18px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+  padding: 15px 0;
+}
+
+.footer-social {
+  padding-bottom: 15px;
+  font: 18px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+}
+
+.footer-social li {
+  float: left;
+  padding: 0 3px;
+}
+
+.contacts-wr {
+  padding: 35px 40px 0 0;
+}
+
+.contacts-wr a {
+  display: block;
+  padding-bottom: 10px;
+  color: #000;
+  font: 18px Arial, "Helvetica Neue", Tahoma, Helvetica, sans-serif;
+}
+
+.footer-gray-strip {
+  background: #444544;
+  height: 20px;
+  width: 100%;
+  margin-top: 100px;
+}
