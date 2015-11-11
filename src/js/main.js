@@ -2,11 +2,14 @@
  * Third party
  */
 
-//= partials/jquery-2.1.4.min.js
+ //= partials/jquery-2.1.4.min.js
+ //= partials/jquery.color.min.js
+ //= partials/jquery.animateNumber.min.js
+
 /*
  * Custom
  */
-//= partials/app.js
+
 
 $(document).ready(function() {
     /* calculator.html
@@ -84,7 +87,10 @@ $(document).ready(function() {
    $('.uniq-img-wr').toggle("fast");
   });
 
-hideAll();
+  hideAll();
+  calc();
+  var priceResult = 0;
+  var countValue = 0;
 
 $(".type-site").change(function(){
   if($(this).val() == 0) hideAll();
@@ -105,6 +111,8 @@ function hideAll() {
   $('.starter-img-wr').hide();
   $('.calc-section').hide();
 
+  $("input[type=checkbox]").removeAttr("checked");
+  changeNumber(0);
   $('.callback-img').hide();
   $('.call-request-img').hide();
   $('.search-img').hide();
@@ -128,13 +136,16 @@ function hideAll() {
 
 function toggleFormOne() {
   hideAll();
+  changeNumber(9780);
   $('.select-site-visit').toggle("fast");
   $('.calc-section').toggle();
   $('.starter-img-wr').toggle();
+
 }
 
 function toggleFormTwo() {
   hideAll();
+  changeNumber(16800);
   $('.select-landing-page').toggle("fast");
   $('.calc-section').toggle();
   $('.starter-img-wr').toggle();
@@ -142,6 +153,7 @@ function toggleFormTwo() {
 
 function toggleFormThree() {
   hideAll();
+  changeNumber(27780);
   $('.select-corp-site').toggle("fast");
   $('.calc-section').toggle();
   $('.starter-img-wr').toggle();
@@ -149,6 +161,7 @@ function toggleFormThree() {
 
 function toggleFormFour() {
   hideAll();
+  changeNumber(33380);
   $('.select-present-site').toggle("fast");
   $('.calc-section').toggle();
   $('.starter-img-wr').toggle();
@@ -156,10 +169,81 @@ function toggleFormFour() {
 
 function toggleFormFive() {
   hideAll();
+  changeNumber(57180);
   $('.select-e-shop').toggle("fast");
   $('.calc-section').toggle();
   $('.starter-img-wr').toggle();
 }
+var checkedListPrice = 0;
+function changeNumber(countValue) {
+  if (countValue){
+    checkedListPrice = countValue;
+  }
+    //обнуляем цену каждый раз при выделении чекбокса
+    priceResult = checkedListPrice;
+    //перебираем блок
+    $(".calc-item").each(function(index){
+      //если выделен чекбокс
+      if ($( this ).children("input").prop("checked") == true ){  
+        //прибавляем цену
+        priceResult = priceResult + parseInt($( this ).children("label").children(".calc-price").html());
+        
+      }
+    });
+     //анимируем число
+     $('.barrel-number').animateNumber(
+    {
+      number: priceResult * decimal_factor,
+
+      numberStep: function(now, tween) {
+      var floored_number = Math.floor(now) / decimal_factor,
+        target = $(tween.elem);
+      if (decimal_places > 0) {
+        floored_number = floored_number.toFixed(decimal_places);
+      }
+      //текст в поле цены
+      target.text(floored_number + ' руб');
+      }
+    },//скорость прибавления
+    300
+    );
+   } // close changeNumber
+
+  var decimal_places = 0;
+  var decimal_factor = decimal_places === 0 ? 1 : decimal_places * 10;
+  function calc() {
+     //для анимации не целых чисел должно быть > 0
+
+  
+  //итоговая цена
+ 
+
+  //перебираем все элементы с чекбоксами
+  $(".calc-item").each(function(index){
+  //добавляем каждому функцию при изменении с false на true: прибавляет общую цену
+  $( this ).children("input").change(function(){
+    changeNumber();
+  });
+  });
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
